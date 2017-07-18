@@ -1,0 +1,7 @@
+{
+  "name": "cc.dom",
+  "displayName": "DOM library.",
+  "version": "0.1.0",
+  "description": "Library for manipulating the DOM.",
+  "main": "dom.js"
+}
