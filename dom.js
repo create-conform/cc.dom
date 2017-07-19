@@ -287,6 +287,13 @@ function DOM() {
         );
     };
 
+    this.isNode = function(o) {
+        return (
+            typeof Node === "object" ? o instanceof Node :
+            o && typeof o === "object" && typeof o.nodeType === "number" && typeof o.nodeName==="string"
+        );
+    };
+
     //
     // loadCSS(code, resname)
     //      Loads the specified css code in the browser under a new style tag with the given resource name.
