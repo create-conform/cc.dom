@@ -1,4 +1,4 @@
-define(function DOM() {
+function DOM() {
     var self = this;
 
     var DISABLEPAGE_DIV_ID = "disablepage_div";
@@ -310,4 +310,8 @@ define(function DOM() {
 
         document.head.appendChild(style);
     }
+}
+
+define(function() {
+    return new (Function.prototype.bind.apply(DOM, arguments));
 });
