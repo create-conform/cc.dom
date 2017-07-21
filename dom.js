@@ -8,7 +8,7 @@ function DOM() {
     //      Disables the page.
     //
     this.disablePage = function (element) {
-        if ((element.ownerDocument || document).getElementById(DISABLEPAGE_DIV_ID) != null) {
+        if (((element && element.ownerDocument) || document).getElementById(DISABLEPAGE_DIV_ID) != null) {
             return;
         }
         var scdv = document.createElement("div");
@@ -26,7 +26,7 @@ function DOM() {
         scdv.style.height = "100%";
         self.disableSelectionOnElement(scdv);
         //scdv.className = "disableScreen";
-        (element.ownerDocument || document).body.appendChild(scdv);
+        ((element && element.ownerDocument) || document).body.appendChild(scdv);
     };
 
     //
@@ -34,11 +34,11 @@ function DOM() {
     //      Enables the page, after it is disabled.
     //
     this.enablePage = function (element) {
-        var scdv = (element.ownerDocument || document).getElementById(DISABLEPAGE_DIV_ID);
+        var scdv = ((element && element.ownerDocument) || document).getElementById(DISABLEPAGE_DIV_ID);
         if (scdv == null) {
             return;
         }
-        (element.ownerDocument || document).body.removeChild(scdv);
+        ((element && element.ownerDocument) || document).body.removeChild(scdv);
     };
 
     this.getBrowserWidth = function() {
