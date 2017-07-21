@@ -7,8 +7,8 @@ function DOM() {
     //  disablePage()
     //      Disables the page.
     //
-    this.disablePage = function () {
-        if (document.getElementById(DISABLEPAGE_DIV_ID) != null) {
+    this.disablePage = function (element) {
+        if ((element.ownerDocument || document).getElementById(DISABLEPAGE_DIV_ID) != null) {
             return;
         }
         var scdv = document.createElement("div");
@@ -26,19 +26,19 @@ function DOM() {
         scdv.style.height = "100%";
         self.disableSelectionOnElement(scdv);
         //scdv.className = "disableScreen";
-        document.body.appendChild(scdv);
+        (element.ownerDocument || document).body.appendChild(scdv);
     };
 
     //
     //  enablePage()
     //      Enables the page, after it is disabled.
     //
-    this.enablePage = function () {
+    this.enablePage = function (element) {
         var scdv = document.getElementById(DISABLEPAGE_DIV_ID);
         if (scdv == null) {
             return;
         }
-        document.body.removeChild(scdv);
+        (element.ownerDocument || document).body.removeChild(scdv);
     };
 
     this.getBrowserWidth = function() {
