@@ -34,7 +34,7 @@ function DOM() {
     //      Enables the page, after it is disabled.
     //
     this.enablePage = function (element) {
-        var scdv = document.getElementById(DISABLEPAGE_DIV_ID);
+        var scdv = (element.ownerDocument || document).getElementById(DISABLEPAGE_DIV_ID);
         if (scdv == null) {
             return;
         }
