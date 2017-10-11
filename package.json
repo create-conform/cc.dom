@@ -1,7 +1,9 @@
 {
   "name": "cc.dom",
   "title": "DOM library",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Library for manipulating the DOM.",
-  "main": "dom.js"
+  "pkx" : {
+    "main": "dom.js"
+  }
 }
